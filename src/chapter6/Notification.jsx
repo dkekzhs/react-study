@@ -2,7 +2,7 @@ import React from "react";
 
 const styles = {
     wrapper : {
-        marigin : 8,
+        margin : 8,
         padding : 8,
         display : "flex",
         flexDirection : "row",

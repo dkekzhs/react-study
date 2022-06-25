@@ -2,13 +2,16 @@ import React from "react";
 import Notification from "./Notification";
 
 const resercedNotification =[
-    {
+    {   
+        id : 1,
         message : "ㅎㅇ",
     },
     {
+        id : 2,
         message : "ㅎㅇ",
     },
     {
+        id : 3,
         message : "ㅎㅇ",
     },
 ]
@@ -35,11 +38,17 @@ class NotificationList extends React.Component{
 
         },1000);
     }
+    
     render(){
         return (
             <div>
                 {this.state.notifications.map(notifications =>{
-                    return <Notification message = {notifications.message}/>
+                    return <Notification 
+                    key={notifications.id}
+                    id={notifications.id}
+                    message = {notifications.message}
+                    
+                    />
                 })}
             </div>
         );
