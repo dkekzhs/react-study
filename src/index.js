@@ -5,12 +5,12 @@ import reportWebVitals from './reportWebVitals';
 
 // import Libray from './chapter3/Library';
 // import Clock from './chapter4/clock';
-import CommentList from './chapter5/CommentList';
-
+// import CommentList from './chapter5/CommentList';
+import NotificationList from './chapter6/NotificationList';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CommentList />
+    <NotificationList />
   </React.StrictMode>
 );
 

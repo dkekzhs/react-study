@@ -1,0 +1,35 @@
+import React from "react";
+
+const styles = {
+    wrapper : {
+        marigin : 8,
+        padding : 8,
+        display : "flex",
+        flexDirection : "row",
+        border : "1px solid black",
+        borderRadius : 16,
+        },
+        messageTExt : {
+            color : "black",
+            fontSize : 16,
+        },
+};
+
+class Notification extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state ={};
+    }
+    render (){
+        return (
+            <div style={styles.wrapper}>
+                <span style={styles.messageTExt}>
+                    {this.props.message}
+                </span>
+            </div>
+        );
+    }
+}
+
+export default Notification;
