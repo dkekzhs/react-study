@@ -7,11 +7,12 @@ import reportWebVitals from './reportWebVitals';
 // import Clock from './chapter4/clock';
 // import CommentList from './chapter5/CommentList';
 // import NotificationList from './chapter6/NotificationList';
-import Accommodate from './chapter7/Accommodate';
+// import Accommodate from './chapter7/Accommodate';
+import ConfirmEvent from './chapter8/ConfirmEvent';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Accommodate />
+    <ConfirmEvent />
   </React.StrictMode>
 );
 
