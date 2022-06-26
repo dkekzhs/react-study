@@ -11,11 +11,12 @@ import reportWebVitals from './reportWebVitals';
 // import ConfirmEvent from './chapter8/ConfirmEvent';
 // import LandingPage from './chapter9/LandingPage';
 // import AttendanceBook from './chapter10/AttendanceBook';
-import SignUp from './chapter11/SignUp';
+// import SignUp from './chapter11/SignUp';
+import Calcul from './chapter12/Calcul';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <SignUp />
+    <Calcul />
   </React.StrictMode>
 );
 
