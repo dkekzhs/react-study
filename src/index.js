@@ -10,11 +10,12 @@ import reportWebVitals from './reportWebVitals';
 // import Accommodate from './chapter7/Accommodate';
 // import ConfirmEvent from './chapter8/ConfirmEvent';
 // import LandingPage from './chapter9/LandingPage';
-import AttendanceBook from './chapter10/AttendanceBook';
+// import AttendanceBook from './chapter10/AttendanceBook';
+import SignUp from './chapter11/SignUp';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AttendanceBook />
+    <SignUp />
   </React.StrictMode>
 );
 
