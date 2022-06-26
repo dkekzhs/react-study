@@ -8,11 +8,12 @@ import reportWebVitals from './reportWebVitals';
 // import CommentList from './chapter5/CommentList';
 // import NotificationList from './chapter6/NotificationList';
 // import Accommodate from './chapter7/Accommodate';
-import ConfirmEvent from './chapter8/ConfirmEvent';
+// import ConfirmEvent from './chapter8/ConfirmEvent';
+import LandingPage from './chapter9/LandingPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ConfirmEvent />
+    <LandingPage />
   </React.StrictMode>
 );
 
