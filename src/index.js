@@ -12,11 +12,12 @@ import reportWebVitals from './reportWebVitals';
 // import LandingPage from './chapter9/LandingPage';
 // import AttendanceBook from './chapter10/AttendanceBook';
 // import SignUp from './chapter11/SignUp';
-import Calcul from './chapter12/Calcul';
+// import Calcul from './chapter12/Calcul';
+import ProfileCard from './chapter13/ProfileCard';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Calcul />
+    <ProfileCard />
   </React.StrictMode>
 );
 
