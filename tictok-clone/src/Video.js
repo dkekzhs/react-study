@@ -1,6 +1,6 @@
 import React, { useRef , useState } from 'react'
 import "./Video.css";
-import VideoFooter from './VideoFooter';
+import VideoFooter from "./VideoFooter";
 function Video() {
   const videoRef = useRef(null);
   const [play, setplay] = useState(false);
@@ -23,8 +23,11 @@ function Video() {
        className='video__player'
        onClick={onVideoPress}
        ref={videoRef}
-        src='https://v16-webapp.tiktok.com/c83cd6dc61e3dea1fde6f16a9089e7a2/62d99cd4/video/tos/alisg/tos-alisg-pve-0037/5144d8ea141146a9b0abe179102c1790/?a=1988&ch=0&cr=0&dr=0&lr=tiktok_m&cd=0%7C0%7C1%7C0&cv=1&br=2760&bt=1380&btag=80000&cs=0&ds=3&ft=z_piDPd82NvjVb4DqOzfuCYQFAe4nRQjlu-~ItOB&mime_type=video_mp4&qs=0&rc=NDw5ZWg4NzY6OjM6Mzc8OUBpam1oaTo6ZmtnZTMzODgzNEA2LzE0YTU2XzExMGE1YjI1YSM0LmhgcjQwcGBgLS1kLy1zcw%3D%3D&l=20220721123646010251003189211702CE'></video>
-      <VideoFooter/>
+       loop
+        src="https://v16-webapp.tiktok.com/bf331a493c27257787891334cae7ee95/62dad4cb/video/tos/useast2a/tos-useast2a-pve-0068/4c94249ac235424daf8e6f3cee2b2810/?a=1988&ch=0&cr=0&dr=0&lr=tiktok_m&cd=0%7C0%7C1%7C0&cv=1&br=944&bt=472&btag=80000&cs=0&ds=3&ft=TkXt21CmvjVQ9O.6ZSTsdHc64i_a7uwQAGEe8bSya9&mime_type=video_mp4&qs=0&rc=OTlpZWlmN2g2OGhoZTgzZ0Bpajl3bGc6Zm1vPDMzNzczM0AzXjBhYWE2NjQxLzMtLTNeYSNtc2szcjRnYHJgLS1kMTZzcw%3D%3D&l=20220722104708010245244165270510CD">
+          
+        </video>
+    <VideoFooter/>
     </div>
   )
 }
