@@ -4,21 +4,24 @@ import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import Ticker from "react-ticker";
 
 
-function VideoFooter() {
+function VideoFooter({channel, description , song}) {
   return (
     <div className='videoFooter'>
       <div className="videoFooter__text">
-        <h3>@dkkzhs</h3>
-        <p>this is a description</p>
-        <MusicNoteIcon/>
-        <Ticker className="videoFooter_ticker">
-        {({ index }) =>(
-          <>
-            <p>YOoo Whats up guys </p>
-          </>
-        )}
-        </Ticker>
-      </div>
+        <h3>{channel}</h3>
+        <p>{description}</p>
+
+        <div className="videoFooter__ticker">
+          <MusicNoteIcon className="videoFooter__icon" />
+          <Ticker mode="smooth">
+            {({ index }) => (
+              <>
+                <p>{song}</p>
+              </>
+            )}
+          </Ticker>
+        </div>
+        </div>
       <img className='videoFooter__record'
        src='https://static.thenounproject.com/png/934821-200.png' alt=''></img>
 

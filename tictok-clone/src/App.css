@@ -15,7 +15,6 @@ html {
   border-radius: 20;
   height : 800px;
   overflow: scroll;
-  width: 80%;
   scroll-snap-type: y mandatory;
 }
 .app__videos::-webkit-scrollbar{
