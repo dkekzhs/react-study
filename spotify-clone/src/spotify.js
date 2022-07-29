@@ -9,11 +9,11 @@ const scopes = [
     "user-top-read",
     "user-modify-playback-state",
   ];
-
+  
   export const getTokenFromResponse = () => {
     return window.location.hash
       .substring(1)
-      .split("$")
+      .split("&")
       .reduce((initial, item) => {
         var parts = item.split("=");
         initial[parts[0]] = decodeURIComponent(parts[1]);
@@ -21,6 +21,7 @@ const scopes = [
         return initial;
       }, {});
   };
+  
 
   export const accessUrl = `${authEndpoint}?client_id=${clientId}&response_type=token&redirect_uri=${redirectUri}&scope=${scopes.join(
     "%20"

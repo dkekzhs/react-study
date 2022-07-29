@@ -12,13 +12,14 @@ function App() {
   const [{ user , token} , dispatch] = useDataLayerValue();
   
   useEffect(() => {
-    const hash =  getTokenFromResponse();
+    const hash = getTokenFromResponse();
     window.location.hash = "";
-    const _token = hash.access_token;
+    let _token = hash.access_token;
     
     if(_token) {
+    
       dispatch({
-        tpye : "SET_TOKEN",
+        type : "SET_TOKEN",
         token : _token,
       })
       spotify.setAccessToken(_token);
@@ -30,15 +31,19 @@ function App() {
         })
       })
 
-      console.log("token : " + token );
-      console.log("user : "  + user)
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists,
+        });
+      })
     }
 
    },[user,token,dispatch]);
   return (
     <div className="App">
       {
-        token ? (<Player/>) : (<Login/>)
+        token ? (<Player spotify={spotify}/>) : (<Login/>)
       }
     </div>
   );
