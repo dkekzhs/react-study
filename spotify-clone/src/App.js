@@ -30,13 +30,20 @@ function App() {
           
         })
       })
-
+    
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
           type: "SET_PLAYLISTS",
           playlists,
         });
       })
+      spotify.getPlaylist("24nghhlXn2LQZzoulW22dp")
+      .then( (response) =>
+        dispatch({
+          type : "SET_MUSIC",
+          music : response,
+        })
+      )
     }
 
    },[user,token,dispatch]);
