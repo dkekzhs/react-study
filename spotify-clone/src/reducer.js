@@ -8,7 +8,7 @@ export const initialState = {
 }
 
 export const reducer =(state , action) =>{
-    console.log(action.item);
+    console.log(action);
     switch(action.type){
         case "SET_PLAYING":
             return {

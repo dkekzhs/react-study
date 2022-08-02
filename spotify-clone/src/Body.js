@@ -9,15 +9,17 @@ import SongRow from "./SongRow";
 
 
 function Body({spotify}) {
-  const [ {music } , dispatch] = useDataLayerValue();
+  const [ {music, device } , dispatch] = useDataLayerValue();
 
   const playSong = (id) => {
     spotify
       .play({
-        uris: [`spotify:track:${id}`],
+        uris: [`spotify:track:${id}`]
       })
       .then((r) => {
+
         spotify.getMyCurrentPlayingTrack().then((r) => {
+
           dispatch({
             type: "SET_ITEM",
             item: r.item,

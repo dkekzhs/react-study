@@ -14,9 +14,10 @@ import { Grid, Slider } from "@mui/material/";
 import { useDataLayerValue } from "./DataLayer";
 
 function Footer({spotify}) {
-  const [{item , playing } ,dispatch] = useDataLayerValue();
+  const [{ playing } ,dispatch] = useDataLayerValue();
 
   useEffect(() => {
+  
     spotify.getMyCurrentPlaybackState().then((r) => {
       dispatch({
         type: "SET_PLAYING",
@@ -29,7 +30,7 @@ function Footer({spotify}) {
       });
     });
 
-  }, [spotify]);
+  }, [spotify , dispatch]);
 
   
   const handlePlayPause = () => {
@@ -47,6 +48,42 @@ function Footer({spotify}) {
       });
     }
   };
+ 
+  const skipNext = () => {
+    spotify.skipToNext();
+    spotify.getMyCurrentPlayingTrack().then((r) => {
+      dispatch({
+        type: "SET_ITEM",
+        item: r.item,
+      });
+      dispatch({
+        type: "SET_PLAYING",
+        playing: true,
+      });
+    });
+    spotify.play();
+  };
+
+  const skipPrevious = () => {
+    spotify.skipToPrevious();
+    spotify.getMyCurrentPlayingTrack().then((r) => {
+      dispatch({
+        type: "SET_ITEM",
+        item: r.item,
+      });
+      dispatch({
+        type: "SET_PLAYING",
+        playing: true,
+      });
+    });
+    spotify.play();
+  };
+  const handleVolum = (event , value) =>{
+    let volume = value; 
+    spotify.setVolume(volume);
+    
+
+  }
   return (
     <div className='footer'>
         <div className="footer__left">
@@ -60,12 +97,12 @@ function Footer({spotify}) {
         </div>
         <div className="footer__center">
             <ShuffleIcon className='footer__green'/>
-            <SkipPreviousIcon className='footer__icon'/>
+            <SkipPreviousIcon className='footer__icon' onClick={skipPrevious}/>
             {playing?
             (<PauseCircleOutlineIcon className='footer__icon' fontSize='large' onClick={handlePlayPause}/>):
             (<PlayCircleOutlineIcon className='footer__icon' fontSize='large' onClick={handlePlayPause}/>)}
 
-            <SkipNextIcon className='footer__icon'/>
+            <SkipNextIcon className='footer__icon' onClick={skipNext}/>
             <RepeatIcon className='footer__green'/>
         </div>
         <div className="footer__right">
@@ -77,7 +114,7 @@ function Footer({spotify}) {
             <VolumeDownIcon />
           </Grid>
           <Grid item xs>
-            <Slider aria-labelledby="continuous-slider" />
+            <Slider id="silder" aria-labelledby="continuous-slider" onChangeCommitted={handleVolum} />
           </Grid>
         </Grid>
         </div>
